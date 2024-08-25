@@ -5,6 +5,8 @@ var button = document.getElementById('lc-button');
 var recognizing = false;
 
 var recognition = new webkitSpeechRecognition();
+var sp = new URLSearchParams(location.search)
+if (sp.has("lang")) recognition.lang = sp.get("lang")
 var sessions = loadFromLocalStorage('sessions');
 var currentSession = null;
 var transcript = [];
